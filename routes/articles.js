@@ -5,7 +5,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 router.get('/', async (req, res) => {
-    const articles = await prisma.article.findMany({ include: { user: true } });
+    const articles = await prisma.article.findMany({ include: { user: false } });
     res.json(articles);
 });
 
